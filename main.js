@@ -1,6 +1,4 @@
-// script.js
 document.addEventListener('DOMContentLoaded', function() {
-    // Create modal elements
     const modal = document.createElement('div');
     modal.className = 'modal';
     modal.innerHTML = `
@@ -11,12 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.body.appendChild(modal);
 
-    // Get all images and modal elements
     const images = document.querySelectorAll('.photo-card img');
     const modalImg = modal.querySelector('.modal-image');
     const closeButton = modal.querySelector('.close-button');
 
-    // Add click handler to all images
     images.forEach(img => {
         img.addEventListener('click', function() {
             modal.style.display = "block";
@@ -24,19 +20,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Close modal when clicking close button
     closeButton.addEventListener('click', function() {
         modal.style.display = "none";
     });
 
-    // Close modal when clicking outside the image
     modal.addEventListener('click', function(e) {
         if (e.target === modal) {
             modal.style.display = "none";
         }
     });
 
-    // Close modal with Escape key
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             modal.style.display = "none";
@@ -60,12 +53,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalImg = modal.querySelector('.modal-image');
     const closeButton = modal.querySelector('.close-button');
 
-    // Function to toggle navbar
     const toggleNavbar = (display) => {
         navbar.style.display = display;
     };
 
-    // Open modal and hide navbar
     images.forEach(img => {
         img.addEventListener('click', function() {
             modal.style.display = "block";
@@ -74,7 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Close modal and show navbar
     const closeModal = () => {
         modal.style.display = "none";
         toggleNavbar('flex');
